@@ -1,4 +1,4 @@
-class elasticsearch::service{
+class elasticsearch::service {
  
   case $::osfamily {
           'RedHat': {
@@ -10,8 +10,7 @@ class elasticsearch::service{
   }
   
   service {
-    "redis":
-            name      => $service,
+    $service:
             enable    => true,
             ensure    => running,
             require   => Package[$elasticsearch::packages::packs],
