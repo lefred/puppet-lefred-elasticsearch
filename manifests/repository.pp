@@ -1,12 +1,14 @@
 class elasticsearch::repository {
 
+ $version = $elasticsearch::version
+
  case $::osfamily {
     'RedHat': {
 			 	yumrepo {
 			     		"elasticsearch":
-			            		descr       => "Elasticsearch repository for 1.0.x pacakges",
+			            		descr       => "Elasticsearch repository for ${version}.x packages",
 			            		enabled     => 1,
-			            		baseurl     => "http://packages.elasticsearch.org/elasticsearch/1.0/centos",
+			            		baseurl     => "http://packages.elasticsearch.org/elasticsearch/${version}/centos",
 			                gpgkey      => "http://packages.elasticsearch.org/GPG-KEY-elasticsearch",
 			            		gpgcheck    => 1;
 				}
@@ -15,7 +17,7 @@ class elasticsearch::repository {
 	      include ::apt
         apt::source {
 							"elasticsearch":
-								      location	=> "http://packages.elasticsearch.org/elasticsearch/1.0/debian",
+								      location	=> "http://packages.elasticsearch.org/elasticsearch/${version}/debian",
 								      release		=> "stable",
 								      repos		=> "main",
 								      key		=> "D88E42B4",

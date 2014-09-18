@@ -14,7 +14,7 @@ class elasticsearch::packages {
   package {
     $packs:
         require => $require,
-        ensure  => "installed";
+        ensure  => "latest";
   } 
 
   
