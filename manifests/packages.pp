@@ -8,7 +8,7 @@ class elasticsearch::packages {
           }
           'Debian': {
                 $require = Apt::Source['elasticsearch']
-                $packs  = [ "openjdk-7-jre-lib", "elasticsearch" ]
+                $packs  = [ "openjdk-7-jre-headless", "elasticsearch" ]
           }
   }
   package {
