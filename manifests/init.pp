@@ -1,4 +1,4 @@
-class elasticsearch (version="1.0") {
+class elasticsearch ($version="1.0") {
 
   include elasticsearch::repository
   include elasticsearch::packages
