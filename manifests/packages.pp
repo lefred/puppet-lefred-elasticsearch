@@ -1,6 +1,6 @@
 class elasticsearch::packages {
 
-  $packs  = [ "java-1.7.0-openjdk", elasticsearch" ]
+  $packs  = [ "java-1.7.0-openjdk", "elasticsearch" ]
    
   case $::osfamily {
           'RedHat': {
