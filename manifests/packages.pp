@@ -1,14 +1,13 @@
 class elasticsearch::packages {
 
+  $packs   = "elasticsearch"
    
   case $::osfamily {
           'RedHat': {
-                $packs   = "redis"
                 $require = Yumrepo['elasticsearch']
                 
           }
           'Debian': {
-                $packs   = "redis-server"
                 $require = Apt::Source['elasticsearch']
           }
   }
