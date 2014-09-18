@@ -1,11 +1,11 @@
-class redis::service{
+class elasticsearch::service{
  
   case $::osfamily {
           'RedHat': {
-                $service = "redis" 
+                $service = "elasticsearch" 
           }
           'Debian': {
-                $service = "redis-server" 
+                $service = "elasticsearch" 
           }
   }
   
@@ -14,7 +14,7 @@ class redis::service{
             name      => $service,
             enable    => true,
             ensure    => running,
-            require   => Package[$redis::packages::packs],
+            require   => Package[$elasticsearch::packages::packs],
   }
   
 }
