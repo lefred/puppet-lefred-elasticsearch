@@ -16,8 +16,8 @@ class elasticsearch::repository {
         apt::source {
 							"elasticsearch":
 								      location	=> "http://packages.elasticsearch.org/elasticsearch/1.0/debian",
-								      release		=> "stable",
-								      repos		=> "elasticsearch",
+								      release		=> $lsbdistcodename,
+								      repos		=> "main",
 								      key		=> "D88E42B4",
 								      key_source	=> false,
 								      include_src	=> false
