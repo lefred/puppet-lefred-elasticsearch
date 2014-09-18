@@ -6,8 +6,8 @@ class elasticsearch::repository {
 			     		"elasticsearch":
 			            		descr       => "Elasticsearch repository for 1.0.x pacakges",
 			            		enabled     => 1,
-			            		baseurl     => "http://packages.elasticsearch.org/elasticsearch/1.0/centos"
-			                gpgkey      => "http://packages.elasticsearch.org/GPG-KEY-elasticsearch"
+			            		baseurl     => "http://packages.elasticsearch.org/elasticsearch/1.0/centos",
+			                gpgkey      => "http://packages.elasticsearch.org/GPG-KEY-elasticsearch",
 			            		gpgcheck    => 1;
 				}
     }
